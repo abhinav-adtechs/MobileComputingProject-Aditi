@@ -39,7 +39,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter{
         switch (position){
             case 0 : pageTitle = "Home" ;
             break;
-            case 1 : pageTitle = "Trending" ;
+            case 1 : pageTitle = "Favorites" ;
                 break;
             case 2 : pageTitle = "Upload" ;
                 break;
