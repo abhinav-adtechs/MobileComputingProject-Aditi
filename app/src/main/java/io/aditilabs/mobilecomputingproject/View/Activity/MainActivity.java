@@ -6,7 +6,10 @@ import android.app.ActionBar;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.text.Html;
+import android.widget.ImageView;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import io.aditilabs.mobilecomputingproject.R;
 import io.aditilabs.mobilecomputingproject.View.Adapter.SectionsPagerAdapter;
 
@@ -16,7 +19,6 @@ public class MainActivity extends BaseActivity implements android.support.v7.app
     private SectionsPagerAdapter sectionsPagerAdapter;
     private ViewPager mViewPager;
     android.support.v7.app.ActionBar actionBar ;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -14,14 +14,17 @@ import java.util.List;
 import io.aditilabs.mobilecomputingproject.Model.PhotoPojo;
 import io.aditilabs.mobilecomputingproject.R;
 
+/**
+ * Created by Abhinav on 05/11/17.
+ */
 
-public class PhotosRvAdapter extends RecyclerView.Adapter<PhotosRvAdapter.PhotosViewHolder> {
+public class PhotosFavoritesRvAdapter extends RecyclerView.Adapter<PhotosFavoritesRvAdapter.FavoritesViewHolder> {
 
     private List<PhotoPojo> photoPojos ;
     private Context context ;
     private ItemOnClickListener itemOnClickListener ;
 
-    public PhotosRvAdapter(List<PhotoPojo> photoPojos, Context context, ItemOnClickListener itemOnClickListener) {
+    public PhotosFavoritesRvAdapter(List<PhotoPojo> photoPojos, Context context, ItemOnClickListener itemOnClickListener) {
         this.photoPojos = photoPojos;
         this.context = context;
         this.itemOnClickListener = itemOnClickListener;
@@ -32,26 +35,26 @@ public class PhotosRvAdapter extends RecyclerView.Adapter<PhotosRvAdapter.Photos
     }
 
     @Override
-    public PhotosViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public FavoritesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_rv_photo, parent, false) ;
-        return new PhotosViewHolder(itemView);
+        return new FavoritesViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(final PhotosViewHolder holder, final int position) {
+    public void onBindViewHolder(final FavoritesViewHolder holder, final int position) {
 
-        holder.bindListener(position);
-        holder.ibLike.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_heart_open));
-        holder.ibLike.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.i("TAG", "onClick: Added to fav " + position);
-                holder.ibLike.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_heart_closed));
-            }
-        });
-
-
+        if (photoPojos.get(position).isFavorite()) {
+            holder.bindListener(position);
+            holder.ibLike.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_heart_open));
+            holder.ibLike.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Log.i("TAG", "onClick: Added to fav " + position);
+                    /*holder.ibLike.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_heart_closed));*/
+                }
+            });
+        }
     }
 
     @Override
@@ -59,12 +62,12 @@ public class PhotosRvAdapter extends RecyclerView.Adapter<PhotosRvAdapter.Photos
         return photoPojos.size();
     }
 
-    class PhotosViewHolder extends RecyclerView.ViewHolder{
+    public class FavoritesViewHolder extends RecyclerView.ViewHolder{
 
         private ImageView ivImage ;
         private ImageButton ibLike ;
 
-        PhotosViewHolder(View itemView) {
+        FavoritesViewHolder(View itemView) {
             super(itemView);
 
             ivImage = itemView.findViewById(R.id.item_rv_photo_iv_image) ;
@@ -82,4 +85,5 @@ public class PhotosRvAdapter extends RecyclerView.Adapter<PhotosRvAdapter.Photos
             });
         }
     }
+
 }

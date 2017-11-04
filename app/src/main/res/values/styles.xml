@@ -11,6 +11,8 @@
 
         <item name="android:textSize">19sp</item>
         <item name="android:actionBarStyle">@style/MyTheme.ActionBarStyle</item>
+
+        <item name="android:windowContentTransitions">true</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
