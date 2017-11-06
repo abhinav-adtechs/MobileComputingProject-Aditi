@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+
 import java.util.List;
 
 import io.aditilabs.mobilecomputingproject.Model.PhotoPojo;
@@ -21,10 +22,14 @@ public class PhotosRvAdapter extends RecyclerView.Adapter<PhotosRvAdapter.Photos
     private Context context ;
     private ItemOnClickListener itemOnClickListener ;
 
+
     public PhotosRvAdapter(List<PhotoPojo> photoPojos, Context context, ItemOnClickListener itemOnClickListener) {
         this.photoPojos = photoPojos;
         this.context = context;
         this.itemOnClickListener = itemOnClickListener;
+
+
+
     }
 
     public interface ItemOnClickListener{
@@ -51,6 +56,7 @@ public class PhotosRvAdapter extends RecyclerView.Adapter<PhotosRvAdapter.Photos
             }
         });
 
+        holder.ivImage.setImageDrawable(context.getResources().getDrawable(drawables[position]));
 
     }
 
@@ -82,4 +88,22 @@ public class PhotosRvAdapter extends RecyclerView.Adapter<PhotosRvAdapter.Photos
             });
         }
     }
+
+    private int[] drawables = new int[]{
+            R.drawable.low_001,
+            R.drawable.low_002,
+            R.drawable.low_003,
+            R.drawable.low_004,
+            R.drawable.low_005,
+            R.drawable.low_006,
+            R.drawable.low_007,
+            R.drawable.low_008,
+            R.drawable.low_009,
+            R.drawable.low_010,
+            R.drawable.low_011,
+            R.drawable.low_012,
+            R.drawable.low_013,
+    };
+
+
 }

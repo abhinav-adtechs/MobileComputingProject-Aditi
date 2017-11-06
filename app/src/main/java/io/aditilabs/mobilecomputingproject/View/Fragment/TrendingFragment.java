@@ -66,6 +66,13 @@ public class TrendingFragment extends BaseFragment {
         rvHomePhotos.setLayoutManager(layoutManager);
         rvHomePhotos.setAdapter(photosRvAdapter);
 
+        setData() ;
+    }
+
+    private void setData() {
+
+
+
         photoPojoList.add(new PhotoPojo(1, "bullshit")) ;
         photoPojoList.add(new PhotoPojo(2, "bullshit")) ;
         photoPojoList.add(new PhotoPojo(3, "bullshit")) ;
@@ -84,6 +91,7 @@ public class TrendingFragment extends BaseFragment {
         photoPojoList.add(new PhotoPojo(4, "bullshit", true)) ;
         photoPojoList.add(new PhotoPojo(5, "bullshit")) ;
         photoPojoList.add(new PhotoPojo(6, "bullshit", true)) ;
+
     }
 
 }

@@ -55,6 +55,7 @@ public class HomeFragment extends BaseFragment {
                 Intent intent = new Intent(mainActivity, ImageViewActivity.class) ;
                 ActivityOptionsCompat options = ActivityOptionsCompat.
                         makeSceneTransitionAnimation(mainActivity, (View)itemView.findViewById(R.id.item_rv_photo_iv_image) , "photoView");
+                intent.putExtra("image", position) ;
                 startActivity(intent, options.toBundle());
 
             }
@@ -71,17 +72,12 @@ public class HomeFragment extends BaseFragment {
         photoPojoList.add(new PhotoPojo(4, "bullshit", true)) ;
         photoPojoList.add(new PhotoPojo(5, "bullshit")) ;
         photoPojoList.add(new PhotoPojo(6, "bullshit", true)) ;
-        photoPojoList.add(new PhotoPojo(3, "bullshit")) ;
-        photoPojoList.add(new PhotoPojo(4, "bullshit", true)) ;
-        photoPojoList.add(new PhotoPojo(5, "bullshit")) ;
-        photoPojoList.add(new PhotoPojo(6, "bullshit", false)) ;
-        photoPojoList.add(new PhotoPojo(3, "bullshit")) ;
-        photoPojoList.add(new PhotoPojo(4, "bullshit", true)) ;
-        photoPojoList.add(new PhotoPojo(5, "bullshit")) ;
-        photoPojoList.add(new PhotoPojo(6, "bullshit", true)) ;
-        photoPojoList.add(new PhotoPojo(3, "bullshit")) ;
-        photoPojoList.add(new PhotoPojo(4, "bullshit", true)) ;
-        photoPojoList.add(new PhotoPojo(5, "bullshit")) ;
-        photoPojoList.add(new PhotoPojo(6, "bullshit", true)) ;
+        photoPojoList.add(new PhotoPojo(7, "bullshit")) ;
+        photoPojoList.add(new PhotoPojo(8, "bullshit", true)) ;
+        photoPojoList.add(new PhotoPojo(9, "bullshit")) ;
+        photoPojoList.add(new PhotoPojo(10, "bullshit", false)) ;
+        photoPojoList.add(new PhotoPojo(11, "bullshit")) ;
+        photoPojoList.add(new PhotoPojo(12, "bullshit", true)) ;
+        photoPojoList.add(new PhotoPojo(13, "bullshit")) ;
     }
 }

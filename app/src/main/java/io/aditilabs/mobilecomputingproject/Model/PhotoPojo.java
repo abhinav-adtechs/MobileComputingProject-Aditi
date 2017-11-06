@@ -4,17 +4,17 @@ package io.aditilabs.mobilecomputingproject.Model;
 public class PhotoPojo {
 
     private int photoId ;
-    private String photoUrl ;
+    private String urlHighRes;
     private boolean isFavorite ;
 
-    public PhotoPojo(int photoId, String photoUrl) {
+    public PhotoPojo(int photoId, String urlHighRes) {
         this.photoId = photoId;
-        this.photoUrl = photoUrl;
+        this.urlHighRes = urlHighRes;
     }
 
-    public PhotoPojo(int photoId, String photoUrl, boolean isFavorite) {
+    public PhotoPojo(int photoId, String urlHighRes, boolean isFavorite) {
         this.photoId = photoId;
-        this.photoUrl = photoUrl;
+        this.urlHighRes = urlHighRes;
         this.isFavorite = isFavorite;
     }
 
@@ -26,12 +26,12 @@ public class PhotoPojo {
         this.photoId = photoId;
     }
 
-    public String getPhotoUrl() {
-        return photoUrl;
+    public String getUrlHighRes() {
+        return urlHighRes;
     }
 
-    public void setPhotoUrl(String photoUrl) {
-        this.photoUrl = photoUrl;
+    public void setUrlHighRes(String urlHighRes) {
+        this.urlHighRes = urlHighRes;
     }
 
     public boolean isFavorite() {
