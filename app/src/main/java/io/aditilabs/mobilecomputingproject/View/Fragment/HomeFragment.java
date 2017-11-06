@@ -66,6 +66,11 @@ public class HomeFragment extends BaseFragment {
         rvHomePhotos.setLayoutManager(layoutManager);
         rvHomePhotos.setAdapter(photosRvAdapter);
 
+        setData() ;
+    }
+
+    private void setData() {
+        photoPojoList.clear();
         photoPojoList.add(new PhotoPojo(1, "bullshit")) ;
         photoPojoList.add(new PhotoPojo(2, "bullshit")) ;
         photoPojoList.add(new PhotoPojo(3, "bullshit")) ;
@@ -79,5 +84,7 @@ public class HomeFragment extends BaseFragment {
         photoPojoList.add(new PhotoPojo(11, "bullshit")) ;
         photoPojoList.add(new PhotoPojo(12, "bullshit", true)) ;
         photoPojoList.add(new PhotoPojo(13, "bullshit")) ;
+
+        photosRvAdapter.notifyDataSetChanged();
     }
 }

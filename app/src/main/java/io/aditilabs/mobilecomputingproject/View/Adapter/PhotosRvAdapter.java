@@ -47,7 +47,12 @@ public class PhotosRvAdapter extends RecyclerView.Adapter<PhotosRvAdapter.Photos
     public void onBindViewHolder(final PhotosViewHolder holder, final int position) {
 
         holder.bindListener(position);
-        holder.ibLike.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_heart_open));
+        if (photoPojos.get(position).isFavorite()){
+            holder.ibLike.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_heart_closed));
+        }
+        else {
+            holder.ibLike.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_heart_open));
+        }
         holder.ibLike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

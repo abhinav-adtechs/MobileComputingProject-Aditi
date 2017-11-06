@@ -14,9 +14,6 @@ import java.util.List;
 import io.aditilabs.mobilecomputingproject.Model.PhotoPojo;
 import io.aditilabs.mobilecomputingproject.R;
 
-/**
- * Created by Abhinav on 05/11/17.
- */
 
 public class PhotosFavoritesRvAdapter extends RecyclerView.Adapter<PhotosFavoritesRvAdapter.FavoritesViewHolder> {
 
@@ -46,7 +43,7 @@ public class PhotosFavoritesRvAdapter extends RecyclerView.Adapter<PhotosFavorit
 
         if (photoPojos.get(position).isFavorite()) {
             holder.bindListener(position);
-            holder.ibLike.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_heart_open));
+            holder.ibLike.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_heart_closed));
             holder.ibLike.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -54,6 +51,10 @@ public class PhotosFavoritesRvAdapter extends RecyclerView.Adapter<PhotosFavorit
                     /*holder.ibLike.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_heart_closed));*/
                 }
             });
+
+            holder.ivImage.setImageDrawable(context.getResources().getDrawable(drawables[position]));
+        }else {
+
         }
     }
 
@@ -85,5 +86,23 @@ public class PhotosFavoritesRvAdapter extends RecyclerView.Adapter<PhotosFavorit
             });
         }
     }
+
+
+    private int[] drawables = new int[]{
+            R.drawable.low_001,
+            R.drawable.low_002,
+            R.drawable.low_003,
+            R.drawable.low_004,
+            R.drawable.low_005,
+            R.drawable.low_006,
+            R.drawable.low_007,
+            R.drawable.low_008,
+            R.drawable.low_009,
+            R.drawable.low_010,
+            R.drawable.low_011,
+            R.drawable.low_012,
+            R.drawable.low_013,
+    };
+
 
 }

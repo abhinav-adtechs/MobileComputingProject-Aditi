@@ -19,6 +19,7 @@ import io.aditilabs.mobilecomputingproject.Model.PhotoPojo;
 import io.aditilabs.mobilecomputingproject.R;
 import io.aditilabs.mobilecomputingproject.View.Activity.ImageViewActivity;
 import io.aditilabs.mobilecomputingproject.View.Activity.MainActivity;
+import io.aditilabs.mobilecomputingproject.View.Adapter.PhotosFavoritesRvAdapter;
 import io.aditilabs.mobilecomputingproject.View.Adapter.PhotosRvAdapter;
 
 
@@ -30,7 +31,7 @@ public class TrendingFragment extends BaseFragment {
 
     List<PhotoPojo> photoPojoList = new ArrayList<>();
 
-    PhotosRvAdapter photosRvAdapter ;
+    PhotosFavoritesRvAdapter photosFavoritesRvAdapter ;
 
     MainActivity mainActivity ;
 
@@ -50,21 +51,22 @@ public class TrendingFragment extends BaseFragment {
 
     private void setupRv() {
 
-        photosRvAdapter = new PhotosRvAdapter(photoPojoList, mainActivity, new PhotosRvAdapter.ItemOnClickListener() {
+        photosFavoritesRvAdapter = new PhotosFavoritesRvAdapter(photoPojoList, mainActivity, new PhotosFavoritesRvAdapter.ItemOnClickListener() {
             @Override
             public void onClick(int position, View itemView) {
+
                 Intent intent = new Intent(mainActivity, ImageViewActivity.class) ;
                 ActivityOptionsCompat options = ActivityOptionsCompat.
                         makeSceneTransitionAnimation(mainActivity, (View)itemView.findViewById(R.id.item_rv_photo_iv_image) , "photoView");
+                intent.putExtra("image", position) ;
                 startActivity(intent, options.toBundle());
-
             }
         });
 
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this.getActivity().getApplicationContext(),
                 2) ;
         rvHomePhotos.setLayoutManager(layoutManager);
-        rvHomePhotos.setAdapter(photosRvAdapter);
+        rvHomePhotos.setAdapter(photosFavoritesRvAdapter);
 
         setData() ;
     }
@@ -73,24 +75,11 @@ public class TrendingFragment extends BaseFragment {
 
 
 
-        photoPojoList.add(new PhotoPojo(1, "bullshit")) ;
-        photoPojoList.add(new PhotoPojo(2, "bullshit")) ;
-        photoPojoList.add(new PhotoPojo(3, "bullshit")) ;
         photoPojoList.add(new PhotoPojo(4, "bullshit", true)) ;
-        photoPojoList.add(new PhotoPojo(5, "bullshit")) ;
         photoPojoList.add(new PhotoPojo(6, "bullshit", true)) ;
-        photoPojoList.add(new PhotoPojo(3, "bullshit")) ;
         photoPojoList.add(new PhotoPojo(4, "bullshit", true)) ;
-        photoPojoList.add(new PhotoPojo(5, "bullshit")) ;
-        photoPojoList.add(new PhotoPojo(6, "bullshit", false)) ;
-        photoPojoList.add(new PhotoPojo(3, "bullshit")) ;
         photoPojoList.add(new PhotoPojo(4, "bullshit", true)) ;
-        photoPojoList.add(new PhotoPojo(5, "bullshit")) ;
-        photoPojoList.add(new PhotoPojo(6, "bullshit", true)) ;
-        photoPojoList.add(new PhotoPojo(3, "bullshit")) ;
-        photoPojoList.add(new PhotoPojo(4, "bullshit", true)) ;
-        photoPojoList.add(new PhotoPojo(5, "bullshit")) ;
-        photoPojoList.add(new PhotoPojo(6, "bullshit", true)) ;
+        photoPojoList.add(new PhotoPojo(5, "bullshit", true)) ;
 
     }
 
