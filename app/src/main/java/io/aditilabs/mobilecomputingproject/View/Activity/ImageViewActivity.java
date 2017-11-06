@@ -111,9 +111,9 @@ public class ImageViewActivity extends BaseActivity implements View.OnClickListe
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
                 if (position < 9)
-                    sendIntent.putExtra(Intent.EXTRA_TEXT, "Hey, I wish to share this image with you. Download this file from here: http://abhinavdas.tech/filehosting-wallpapers/low-resolution/00" + position+1 + ".jpg");
+                    sendIntent.putExtra(Intent.EXTRA_TEXT, "Hey, I wish to share this image with you. Download this file from here: https://aditi1209.github.io/filehosting-wallpapers/low-resolution/00" + position+1 + ".jpg");
                 else
-                    sendIntent.putExtra(Intent.EXTRA_TEXT, "Hey, I wish to share this image with you. Download this file from here: http://abhinavdas.tech/filehosting-wallpapers/low-resolution/0" + position+1 +  ".jpg");
+                    sendIntent.putExtra(Intent.EXTRA_TEXT, "Hey, I wish to share this image with you. Download this file from here: https://aditi1209.github.io/filehosting-wallpapers/low-resolution/0" + position+1 +  ".jpg");
                 sendIntent.setType("text/plain");
                 startActivity(sendIntent);
                 break;
@@ -181,7 +181,7 @@ public class ImageViewActivity extends BaseActivity implements View.OnClickListe
                 intent, PendingIntent.FLAG_UPDATE_CURRENT)) ;
 
 
-        String downloadUrl = "http://abhinavdas.tech/filehosting-wallpapers/high-resolution/0" ;
+        String downloadUrl = "https://aditi1209.github.io/filehosting-wallpapers/high-resolution/0" ;
         if (position < 9)
             downloadUrl += "0" + (position+1) + ".jpg" ;
         else
